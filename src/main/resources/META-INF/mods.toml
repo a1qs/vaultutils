@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="GPLv3"
+#issueTrackerURL="https://github.com/a1qs"
+
+[[mods]]
+modId="vaultutils"
+version="${file.jarVersion}"
+displayName="Vault Utilities"
+#displayURL="https://github.com/a1qs"
+#logoFile="vaultutils.png"
+authors="a1qs"
+description='''
+This mod is a mod designed to work with Vault Hunters 3rd edition
+This mod provides players with operator permissions to perform various tasks with ease compared to the conventional way that Vault Hunters currently offers.
+In addition to that, it adds certain tweaks that allow you to modify the game
+'''
+
+[[dependencies.vaultutils]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.vaultutils]]
+    modId="the_vault"
+    mandatory=true
+    versionRange="[1.18.2-3.11.0.2514,)"
+    ordering="NONE"
+    side="BOTH"
