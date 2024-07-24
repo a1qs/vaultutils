@@ -24,8 +24,8 @@ public class VaultTimerCommands {
     public VaultTimerCommands(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("vaultutils")
             .requires(sender -> sender.hasPermission(this.getRequiredPermissionLevel()))
-                .then(Commands.literal("vault_timer")
-                        .then(Commands.literal("addTime").then(Commands.argument("time in ticks", IntegerArgumentType.integer()).executes(this::addTime)))
+                .then(Commands.literal("vaultTimer")
+                        .then(Commands.literal("addTime").then(Commands.argument("timeInTicks", IntegerArgumentType.integer()).executes(this::addTime)))
                         .then(Commands.literal("stopTimer").then(Commands.argument("isPaused", BoolArgumentType.bool()).executes(this::stopTimer)))
                 )
         );
