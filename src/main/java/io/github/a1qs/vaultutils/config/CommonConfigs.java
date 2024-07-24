@@ -8,6 +8,7 @@ public class CommonConfigs {
 
     public static final ForgeConfigSpec.ConfigValue<Boolean> ENABLE_ETERNAL_MIXIN;
     public static final ForgeConfigSpec.ConfigValue<Boolean> ENABLE_VAULT_TIMER_FREEZE;
+    public static final ForgeConfigSpec.ConfigValue<Boolean> ENABLE_VEINMINING_HAMMER;
     public static final ForgeConfigSpec.ConfigValue<Integer> VAULT_TIMER_FREEZE_TIME;
 
 
@@ -16,6 +17,9 @@ public class CommonConfigs {
 
         ENABLE_ETERNAL_MIXIN = BUILDER.comment("Enable the Eternal Mixin which causes eternals to never spawn")
                 .define("ENABLE_ETERNAL_MIXIN", false);
+
+        ENABLE_VEINMINING_HAMMER = BUILDER.comment("EXPERIMENTAL! Re-enables Veinmining while using a tool with Hammering on it.")
+                .define("ENABLE_VEINMINING_HAMMER", false);
 
         ENABLE_VAULT_TIMER_FREEZE = BUILDER.comment("Enable the Vault Timer being frozen upon login")
                         .define("ENABLE_VAULT_TIMER_FREEZE", false);

@@ -4,6 +4,7 @@
   "package": "io.github.a1qs.vaultutils.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "MixinAbstractVeinMiningAbility",
     "MixinListener",
     "MixinSummonEternalAbility",
     "VaultAltarTileEntityInvoker"
