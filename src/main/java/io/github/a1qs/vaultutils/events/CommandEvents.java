@@ -16,7 +16,8 @@ public class CommandEvents {
         new TestCommands(event.getDispatcher());
         new CrystalCommands(event.getDispatcher());
         new CreatePortalCommands(event.getDispatcher());
-        new UnlockArchiveModifiers(event.getDispatcher());
+        new UnlockArchiveModifiersCommands(event.getDispatcher());
+        new VaultAltarCommands(event.getDispatcher());
 
 
         ConfigCommand.register(event.getDispatcher());
