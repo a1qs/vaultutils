@@ -37,7 +37,6 @@ public class VaultUtils {
 
     //todo: make arguments based on players for console execution
     //LEvel cap command
-    //modifier archive thing
     //config for disabling entity radar and map block -> IntegrationWorldMap
     //config for changing reach cap
     //modify crystal attributes
@@ -49,4 +48,5 @@ public class VaultUtils {
     //add vault portal command
     //tp to cake
     //pauseAll vaults
+    //tickfreeze, apply stun to all entities
 }
