@@ -32,7 +32,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class UnlockArchiveModifiers {
+public class UnlockArchiveModifiersCommands {
     private static final List<ItemStack> GEAR_ITEMS = List.of(
             new ItemStack(ModItems.SWORD),
             new ItemStack(ModItems.AXE),
@@ -74,7 +74,7 @@ public class UnlockArchiveModifiers {
 
 
 
-    public UnlockArchiveModifiers(CommandDispatcher<CommandSourceStack> dispatcher) {
+    public UnlockArchiveModifiersCommands(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("vaultutils")
                 .requires(sender -> sender.hasPermission(this.getRequiredPermissionLevel()))
                 .then(Commands.literal("unlockArchiveModifiers")
