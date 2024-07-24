@@ -18,6 +18,7 @@ public class CommandEvents {
         new CreatePortalCommands(event.getDispatcher());
         new UnlockArchiveModifiersCommands(event.getDispatcher());
         new VaultAltarCommands(event.getDispatcher());
+        new ResetAbilityCooldownCommands(event.getDispatcher());
 
 
         ConfigCommand.register(event.getDispatcher());
