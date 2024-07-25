@@ -20,6 +20,7 @@ public class CommandEvents {
         new VaultAltarCommands(event.getDispatcher());
         new ResetAbilityCooldownCommands(event.getDispatcher());
         new UnlockModelCommands(event.getDispatcher());
+        new JewelCommands(event.getDispatcher());
 
 
         ConfigCommand.register(event.getDispatcher());
