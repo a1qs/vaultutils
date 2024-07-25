@@ -21,6 +21,7 @@ public class CommandEvents {
         new ResetAbilityCooldownCommands(event.getDispatcher());
         new UnlockModelCommands(event.getDispatcher());
         new JewelCommands(event.getDispatcher());
+        new TeleportToCakeCommand(event.getDispatcher());
 
 
         ConfigCommand.register(event.getDispatcher());
