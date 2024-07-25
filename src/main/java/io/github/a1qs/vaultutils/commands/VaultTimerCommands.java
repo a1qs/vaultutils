@@ -32,7 +32,7 @@ public class VaultTimerCommands {
     }
 
     private int addTime(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
-        int time = IntegerArgumentType.getInteger(context, "time in ticks");
+        int time = IntegerArgumentType.getInteger(context, "timeInTicks");
         ServerPlayer serverPlayer = context.getSource().getPlayerOrException();
         AtomicBoolean foundInVault = new AtomicBoolean(false);
 
