@@ -14,8 +14,7 @@ import iskallia.vault.core.world.roll.IntRoll;
 import iskallia.vault.item.crystal.CrystalData;
 import iskallia.vault.item.crystal.VaultCrystalItem;
 import iskallia.vault.item.crystal.layout.*;
-import iskallia.vault.item.crystal.objective.CrystalObjective;
-import iskallia.vault.item.crystal.objective.ScavengerCrystalObjective;
+import iskallia.vault.item.crystal.objective.*;
 import iskallia.vault.item.crystal.theme.ValueCrystalTheme;
 import iskallia.vault.item.crystal.time.ValueCrystalTime;
 import net.minecraft.ChatFormatting;
@@ -70,11 +69,12 @@ public class CrystalCommands {
                         .then(Commands.literal("setTime").then(Commands.argument("time in ticks", IntegerArgumentType.integer(0)).executes(this::setTime)))
                         .then(Commands.literal("setTheme").then(Commands.argument("theme", ResourceLocationArgument.id()).suggests(SUGGEST_THEMES).executes(this::setTheme)))
                         .then(Commands.literal("setObjective")
-                                .then(Commands.literal("SCAVENGER").then(Commands.argument("objectiveProbability", FloatArgumentType.floatArg(0.0F, 1.0F)).executes(context -> setObjective(context, new ScavengerCrystalObjective(FloatArgumentType.getFloat(context, "objectiveProbability")))
-                                )))
-                                
+                                .then(Commands.literal("SCAVENGER").then(Commands.argument("objectiveProbability", FloatArgumentType.floatArg(0.0F, 1.0F)).executes(context -> setObjective(context, new ScavengerCrystalObjective(FloatArgumentType.getFloat(context, "objectiveProbability"))))))
+                                .then(Commands.literal("GUARDIAN").then(Commands.argument("objectiveCountMin", IntegerArgumentType.integer(1))).then(Commands.argument("objectiveCountMax", IntegerArgumentType.integer(1))).then(Commands.argument("waveCountMin", IntegerArgumentType.integer(1))).then(Commands.argument("waveCountMax", IntegerArgumentType.integer(1))).then(Commands.argument("objectiveProbability", FloatArgumentType.floatArg(0.0F, 1.0F)).executes(context -> setObjective(context, new BossCrystalObjective(IntRoll.ofUniform(IntegerArgumentType.getInteger(context, "objectiveCountMin"), IntegerArgumentType.getInteger(context, "objectiveCountMax")), IntRoll.ofUniform(IntegerArgumentType.getInteger(context, "waveCountMin"), IntegerArgumentType.getInteger(context, "waveCountMax")), FloatArgumentType.getFloat(context, "objectiveProbability"))))))
+                                .then(Commands.literal("ELIXIR").executes(context -> setObjective(context, new ElixirCrystalObjective())))
+                                .then(Commands.literal("CAKE").executes(context -> setObjective(context, new CakeCrystalObjective())))
+                                .then(Commands.literal("BRAZIER").then(Commands.argument("objectiveCountMin", IntegerArgumentType.integer(1))).then(Commands.argument("objectiveCountMax", IntegerArgumentType.integer(1))).then(Commands.argument("objectiveProbability", FloatArgumentType.floatArg(0.0F, 1.0F)).executes(context -> setObjective(context, new MonolithCrystalObjective(IntRoll.ofUniform(IntegerArgumentType.getInteger(context, "objectiveCountMin"), IntegerArgumentType.getInteger(context, "objectiveCountMax")), FloatArgumentType.getFloat(context, "objectiveProbability"))))))
                         )
-
                 )
         );
     }
